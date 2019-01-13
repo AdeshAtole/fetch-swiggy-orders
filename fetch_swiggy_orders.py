@@ -34,7 +34,12 @@ while(total_orders == -1 or fetched_orders < total_orders-1):
     response = requests.get('https://www.swiggy.com/dapi/order/all', headers=headers,
                             params=params, cookies=cookies)
 
+
     data = json.loads(response.text)
+
+    if data["statusCode"] != 0:
+        print data["statusMessage"]
+        exit()
     # print data;
     if total_orders == -1:
         total_orders = data["data"]["total_orders"]
