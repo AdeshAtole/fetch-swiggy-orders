@@ -1,0 +1,1 @@
+A lame attempt to analyze my spends on Swiggy.
